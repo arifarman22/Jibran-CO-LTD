@@ -49,10 +49,14 @@ model Service {
   id          String   @id @default(uuid())
   title       String
   slug        String   @unique
+  category    String   // TRAVEL, HOSPITALITY, FOOD, AGRICULTURE, REAL_ESTATE, CONSTRUCTION, GARMENTS, TRADING, DIGITAL, CONSULTING, EDUCATION, MEDIA, CSR, OTHER
   description String
   content     String?
+  features    String[] // Array of key features
   imageUrl    String?
   iconUrl     String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
