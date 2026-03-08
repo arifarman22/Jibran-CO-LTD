@@ -1,0 +1,168 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("ADMIN") // ADMIN, EDITOR
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSettings {
+  id          String   @id @default(uuid())
+  companyName String   @default("Jibran C., Ltd")
+  logoUrl     String?
+  address     String?
+  phone       String?
+  email       String?
+  facebook    String?
+  twitter     String?
+  linkedin    String?
+  instagram   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TeamMember {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  bio       String?
+  imageUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String
+  content     String?
+  imageUrl    String?
+  iconUrl     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id              String   @id @default(uuid())
+  title           String
+  description     String
+  productCategory String?
+  client          String?
+  tradeRegion     String?
+  completionDate  DateTime?
+  images          String[] // Array of URLs
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model ProductCategory {
+  id             String          @id @default(uuid())
+  name           String
+  slug           String          @unique
+  description    String?
+  imageUrl       String?
+  exportProducts ExportProduct[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model ExportProduct {
+  id               String          @id @default(uuid())
+  name             String
+  slug             String          @unique
+  description      String
+  images           String[]
+  certifications   String[]
+  exportMarkets    String[]        // Array of market names/IDs
+  categoryId       String
+  category         ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  tradeInquiries   TradeInquiry[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+}
+
+model ExportMarket {
+  id          String   @id @default(uuid())
+  name        String
+  region      String
+  description String?
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model BlogCategory {
+  id          String     @id @default(uuid())
+  name        String
+  slug        String     @unique
+  description String?
+  posts       BlogPost[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model BlogPost {
+  id            String       @id @default(uuid())
+  title         String
+  slug          String       @unique
+  content       String
+  featuredImage String?
+  author        String
+  publishedDate DateTime?
+  isPublished   Boolean      @default(false)
+  categoryId    String
+  category      BlogCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model TradeInquiry {
+  id              String         @id @default(uuid())
+  name            String
+  company         String
+  email           String
+  phone           String?
+  inquiryType     String         // BUYER, SUPPLIER, PARTNER
+  message         String
+  productId       String?
+  product         ExportProduct? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  status          String         @default("NEW") // NEW, IN_PROGRESS, RESOLVED
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+model ContactMessage {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  status    String   @default("NEW") // NEW, READ, REPLIED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  filename  String
+  url       String   @unique
+  mimeType  String
+  size      Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
