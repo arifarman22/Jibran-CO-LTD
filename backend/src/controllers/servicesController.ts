@@ -30,9 +30,9 @@ export const getServiceBySlug = async (req: Request, res: Response): Promise<voi
 
 export const createService = async (req: Request, res: Response): Promise<void> => {
   try {
-    const { title, slug, description, content, imageUrl, iconUrl } = req.body;
+    const { title, slug, description, content, imageUrl, iconUrl, category, features, order, isActive } = req.body;
     const newService = await prisma.service.create({
-      data: { title, slug, description, content, imageUrl, iconUrl },
+      data: { title, slug, description, content, imageUrl, iconUrl, category, features, order, isActive },
     });
     res.status(201).json(newService);
   } catch (error) {
@@ -43,11 +43,11 @@ export const createService = async (req: Request, res: Response): Promise<void> 
 export const updateService = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
-    const { title, slug, description, content, imageUrl, iconUrl } = req.body;
+    const { title, slug, description, content, imageUrl, iconUrl, category, features, order, isActive } = req.body;
     
     const updatedService = await prisma.service.update({
       where: { id: id as string },
-      data: { title, slug, description, content, imageUrl, iconUrl },
+      data: { title, slug, description, content, imageUrl, iconUrl, category, features, order, isActive },
     });
     
     res.json(updatedService);
