@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Ship, Mail, Phone, MapPin } from "lucide-react";
+import { Ship, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -45,17 +45,35 @@ export default function Footer() {
             <ul className="space-y-5 font-sans text-sm text-primary-foreground/70">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span>123 Global Trade Center, Finance District, 10001</span>
+                <span>Ground floor (E0), House 12C, Concrete Road, Toul Thanan Village, Russey Keo, Phnom Penh</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+855 71 666 7335</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
-                <span>inquiry@jibran.com</span>
+                <span>jibrancoltd@gmail.com</span>
               </li>
             </ul>
+          </div>
+
+          <div>
+            <h4 className="font-sans font-bold text-sm uppercase tracking-widest mb-6 text-secondary">Follow Us</h4>
+            <div className="flex space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all hover:scale-110">
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all hover:scale-110">
+                <Twitter className="w-5 h-5 text-white" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all hover:scale-110">
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all hover:scale-110">
+                <Instagram className="w-5 h-5 text-white" />
+              </a>
+            </div>
           </div>
 
         </div>
@@ -65,12 +83,17 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Jibran Co. Ltd. All Rights Reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            {/* Social Icons Placeholder */}
-            <a href="#" className="text-primary-foreground/60 hover:text-white transition-colors">
-              <span className="sr-only">LinkedIn</span>
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
-              </svg>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-white transition-colors">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-white transition-colors">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-white transition-colors">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/60 hover:text-white transition-colors">
+              <Instagram className="h-5 w-5" />
             </a>
           </div>
         </div>
