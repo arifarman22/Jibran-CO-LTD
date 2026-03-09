@@ -89,8 +89,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Phone</h3>
               <p className="text-slate-600 mb-4">Mon-Fri from 9am to 6pm</p>
-              <a href="tel:+1234567890" className="text-blue-600 font-medium hover:text-blue-700">
-                +1 (234) 567-890
+              <a href="tel:+855716667335" className="text-blue-600 font-medium hover:text-blue-700">
+                +855 71 666 7335
               </a>
             </motion.div>
 
@@ -106,8 +106,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Email</h3>
               <p className="text-slate-600 mb-4">Our team is here to help</p>
-              <a href="mailto:info@jibranc.com" className="text-amber-600 font-medium hover:text-amber-700">
-                info@jibranc.com
+              <a href="mailto:jibrancoltd@gmail.com" className="text-amber-600 font-medium hover:text-amber-700">
+                jibrancoltd@gmail.com
               </a>
             </motion.div>
 
@@ -124,7 +124,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-semibold text-slate-900 mb-2">Office</h3>
               <p className="text-slate-600 mb-4">Visit our headquarters</p>
               <p className="text-green-600 font-medium">
-                Dhaka, Bangladesh
+                Phnom Penh, Cambodia
               </p>
             </motion.div>
           </div>
@@ -246,9 +246,8 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">Address</h4>
                     <p className="text-slate-600">
-                      123 Business Avenue<br />
-                      Dhaka 1000<br />
-                      Bangladesh
+                      Phnom Penh<br />
+                      Cambodia
                     </p>
                   </div>
                 </div>
@@ -276,12 +275,17 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-slate-200 rounded-2xl h-80 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-slate-400 mx-auto mb-2" />
-                  <p className="text-slate-500">Map View</p>
-                </div>
+              {/* Cambodia Map */}
+              <div className="rounded-2xl overflow-hidden h-80 shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501726.4599033867!2d104.56470988281249!3d11.578114700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513dc76a6be3%3A0x9c010ee85ab525bb!2sPhnom%20Penh%2C%20Cambodia!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </motion.div>
           </div>
