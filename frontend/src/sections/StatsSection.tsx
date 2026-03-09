@@ -8,46 +8,45 @@ export default function StatsSection() {
     {
       icon: "https://cdn-icons-png.flaticon.com/512/2769/2769339.png",
       value: "50K+",
-      label: "Shipments Annually",
-      description: "Reliable delivery worldwide",
-      gradient: "from-blue-500 via-blue-600 to-cyan-600"
+      label: "Annual Shipments",
+      description: "Containers delivered worldwide",
+      image: "https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?q=80&w=800&auto=format&fit=crop",
+      gradient: "from-blue-600 to-cyan-600"
     },
     {
       icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       value: "60+",
       label: "Countries Served",
-      description: "Global market presence",
-      gradient: "from-purple-500 via-purple-600 to-pink-600"
+      description: "Global market coverage",
+      image: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop",
+      gradient: "from-purple-600 to-pink-600"
     },
     {
       icon: "https://cdn-icons-png.flaticon.com/512/681/681494.png",
-      value: "500+",
+      value: "200+",
       label: "Global Partners",
       description: "Trusted business network",
-      gradient: "from-green-500 via-emerald-600 to-teal-600"
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800&auto=format&fit=crop",
+      gradient: "from-green-600 to-emerald-600"
     },
     {
       icon: "https://cdn-icons-png.flaticon.com/512/3135/3135706.png",
       value: "$100M+",
-      label: "Annual Trade Volume",
-      description: "Growing year over year",
-      gradient: "from-orange-500 via-red-600 to-pink-600"
+      label: "Trade Volume",
+      description: "Annual transaction value",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+      gradient: "from-orange-600 to-red-600"
     }
   ];
 
   return (
-    <section className="py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/10 to-pink-500/10 rounded-full blur-3xl" />
-      </div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-[size:100px_100px]" />
+    <section className="py-32 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.05),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.05),transparent_50%)]" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,21 +57,25 @@ export default function StatsSection() {
             initial={{ scale: 0.9 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-full border border-white/10 text-white font-medium text-sm mb-6"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full border border-blue-100 mb-6"
           >
-            ✨ Our Impact in Numbers
+            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 animate-pulse" />
+            <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Our Global Impact
+            </span>
           </motion.div>
-          <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
             Trading by
-            <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Numbers
             </span>
           </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Proven excellence in international trade and logistics
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Delivering measurable results through strategic partnerships and innovative trade solutions
           </p>
         </motion.div>
 
+        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <motion.div
@@ -80,48 +83,79 @@ export default function StatsSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15, type: "spring" }}
-              whileHover={{ y: -10, scale: 1.02 }}
+              transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
+              whileHover={{ y: -8, scale: 1.02 }}
               className="group"
             >
-              <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-white/40 transition-all duration-500 overflow-hidden">
-                {/* Gradient Overlay on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-                
-                {/* Icon */}
-                <div className="relative mb-6">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${stat.gradient} p-4 mx-auto shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                    <Image
-                      src={stat.icon}
-                      alt={stat.label}
-                      width={80}
-                      height={80}
-                      className="w-full h-full object-contain filter brightness-0 invert"
-                    />
+              <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-blue-200">
+                {/* Background Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={stat.image}
+                    alt={stat.label}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-80 group-hover:opacity-70 transition-opacity`} />
+                  
+                  {/* Icon */}
+                  <div className="absolute top-6 left-6">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md p-3 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                      <Image
+                        src={stat.icon}
+                        alt={stat.label}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain filter brightness-0 invert"
+                      />
+                    </div>
                   </div>
                 </div>
-                
-                {/* Value */}
-                <div className={`text-6xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3 text-center group-hover:scale-110 transition-transform duration-300`}>
-                  {stat.value}
-                </div>
-                
-                {/* Label */}
-                <div className="text-white font-bold text-lg mb-2 text-center">
-                  {stat.label}
-                </div>
-                
-                {/* Description */}
-                <div className="text-slate-400 text-sm text-center">
-                  {stat.description}
+
+                {/* Content */}
+                <div className="p-6 bg-white">
+                  {/* Value */}
+                  <div className={`text-5xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform`}>
+                    {stat.value}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-slate-900 font-bold text-lg mb-2">
+                    {stat.label}
+                  </div>
+                  
+                  {/* Description */}
+                  <div className="text-slate-600 text-sm">
+                    {stat.description}
+                  </div>
                 </div>
 
                 {/* Shine Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <p className="text-slate-600 mb-6">
+            Join hundreds of businesses worldwide who trust us with their international trade
+          </p>
+          <div className="flex flex-wrap justify-center gap-8 items-center opacity-60">
+            <div className="text-sm text-slate-500 font-medium">Trusted by leading companies</div>
+            <div className="flex gap-6">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="w-24 h-8 bg-slate-200 rounded animate-pulse" />
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
