@@ -38,7 +38,7 @@ export default function HeroSection() {
             className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white font-medium text-sm border border-white/20"
           >
             <Globe className="w-4 h-4 mr-2" />
-            Global Business Excellence Since 1994
+            Global Business Excellence Since 2019
           </motion.div>
           
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
@@ -75,7 +75,7 @@ export default function HeroSection() {
             className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 pt-12"
           >
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">30+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">5+</div>
               <div className="text-sm text-white/80">Years Excellence</div>
             </div>
             <div className="h-12 w-px bg-white/20" />
@@ -85,7 +85,7 @@ export default function HeroSection() {
             </div>
             <div className="h-12 w-px bg-white/20" />
             <div className="text-center">
-              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">500+</div>
+              <div className="text-4xl lg:text-5xl font-bold text-white mb-2">200+</div>
               <div className="text-sm text-white/80">Global Partners</div>
             </div>
           </motion.div>
