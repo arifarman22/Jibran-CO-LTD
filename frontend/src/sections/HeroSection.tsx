@@ -30,16 +30,16 @@ export default function HeroSection() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-light text-gray-900 leading-tight">
-              Building Tomorrow's
+              Global Import Export
               <span className="block font-normal bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Business Success
+                Trading Excellence
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Jibran C. Ltd is a premier multi-sector conglomerate delivering excellence across 
-              international trade, hospitality, construction, and innovative business solutions 
-              that drive growth in global markets.
+              Leading international trading company connecting businesses worldwide. Specializing in 
+              seamless import-export operations, supply chain management, and global trade solutions 
+              across multiple industries.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
