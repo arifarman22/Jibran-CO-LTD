@@ -311,6 +311,135 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Our Approach Section */}
+      <section className="py-32 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block mb-6 px-4 py-1 bg-blue-100 rounded-full"
+            >
+              <span className="text-blue-600 font-bold tracking-widest uppercase text-xs">How We Work</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-slate-900 mb-6"
+            >
+              Our Approach to Excellence
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Understanding Your Needs",
+                desc: "We begin by deeply understanding your business requirements, challenges, and goals to provide tailored solutions.",
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                step: "02",
+                title: "Strategic Planning",
+                desc: "Our experts develop comprehensive strategies that align with your objectives and market dynamics.",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                step: "03",
+                title: "Seamless Execution",
+                desc: "We implement solutions with precision, ensuring quality at every step of the process.",
+                color: "from-green-500 to-emerald-500"
+              },
+              {
+                step: "04",
+                title: "Continuous Support",
+                desc: "Our commitment doesn't end at delivery. We provide ongoing support to ensure your success.",
+                color: "from-orange-500 to-red-500"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all group"
+              >
+                <div className={`absolute top-8 right-8 text-8xl font-black bg-gradient-to-br ${item.color} bg-clip-text text-transparent opacity-10 group-hover:opacity-20 transition-opacity`}>
+                  {item.step}
+                </div>
+                <div className="relative">
+                  <div className={`inline-block px-4 py-2 bg-gradient-to-r ${item.color} text-white rounded-full font-bold text-sm mb-4`}>
+                    Step {item.step}
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Awards */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block mb-6 px-4 py-1 bg-amber-100 rounded-full"
+            >
+              <span className="text-amber-600 font-bold tracking-widest uppercase text-xs">Recognition</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-slate-900 mb-6"
+            >
+              Certifications & Awards
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-slate-600 text-xl max-w-2xl mx-auto"
+            >
+              Recognized for excellence in international trade and business operations
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { name: "ISO 9001", desc: "Quality Management" },
+              { name: "ISO 14001", desc: "Environmental" },
+              { name: "Trade Excellence", desc: "2023 Award" },
+              { name: "Best Exporter", desc: "2024 Recognition" }
+            ].map((cert, index) => (
+              <motion.div
+                key={cert.name}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 text-center border-2 border-slate-200 hover:border-amber-500 hover:shadow-xl transition-all group"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Award className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{cert.name}</h3>
+                <p className="text-sm text-slate-600">{cert.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Global Presence CTA */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <img 
