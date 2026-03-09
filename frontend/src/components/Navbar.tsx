@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
 
   const serviceCategories = [
     {
@@ -157,19 +158,29 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-card border-b border-border">
+        <div className="md:hidden bg-white dark:bg-card border-b border-border max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {links.map((link) => (
               <div key={link.name}>
-                <Link
-                  href={link.href}
-                  onClick={() => !link.hasMegaMenu && setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
-                >
-                  {link.name}
-                </Link>
-                {link.hasMegaMenu && (
-                  <div className="pl-6 space-y-4 mt-2">
+                {link.hasMegaMenu ? (
+                  <button
+                    onClick={() => setServicesExpanded(!servicesExpanded)}
+                    className="w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
+                  >
+                    <span>{link.name}</span>
+                    <ChevronDown className={`h-4 w-4 transition-transform ${servicesExpanded ? 'rotate-180' : ''}`} />
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
+                  >
+                    {link.name}
+                  </Link>
+                )}
+                {link.hasMegaMenu && servicesExpanded && (
+                  <div className="pl-6 space-y-4 mt-2 mb-2">
                     {serviceCategories.map((category) => (
                       <div key={category.category}>
                         <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
