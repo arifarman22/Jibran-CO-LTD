@@ -178,6 +178,139 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="py-32 bg-gradient-to-b from-slate-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block mb-6 px-4 py-1 bg-blue-100 rounded-full"
+            >
+              <span className="text-blue-600 font-bold tracking-widest uppercase text-xs">Our Advantages</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-slate-900 mb-6"
+            >
+              Why Choose Jibran Co. Ltd
+            </motion.h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Global Network</h3>
+                <p className="text-slate-600 leading-relaxed">Extensive international presence with operations in 60+ countries and strategic partnerships worldwide.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Proven Track Record</h3>
+                <p className="text-slate-600 leading-relaxed">5+ years of consistent growth and excellence with 99.8% client satisfaction rate across all sectors.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Package className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">End-to-End Solutions</h3>
+                <p className="text-slate-600 leading-relaxed">Comprehensive services from sourcing to delivery with full logistics support and quality assurance.</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-block mb-6 px-4 py-1 bg-amber-100 rounded-full"
+            >
+              <span className="text-amber-600 font-bold tracking-widest uppercase text-xs">Our Journey</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl font-black text-slate-900 mb-6"
+            >
+              Milestones & Achievements
+            </motion.h2>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 to-purple-500" />
+            
+            <div className="space-y-16">
+              {[
+                { year: "2019", title: "Company Founded", desc: "Jibran Co. Ltd established with a vision for global trade excellence" },
+                { year: "2020", title: "First International Partnership", desc: "Expanded operations to 10+ countries across Asia and Europe" },
+                { year: "2022", title: "Major Milestone", desc: "Reached $50M+ in annual trade volume with 100+ global partners" },
+                { year: "2024", title: "Continued Growth", desc: "Operating in 60+ countries with 200+ partners and expanding services" }
+              ].map((milestone, index) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+                >
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
+                    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
+                      <div className="text-4xl font-black bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                        {milestone.year}
+                      </div>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">{milestone.title}</h3>
+                      <p className="text-slate-600">{milestone.desc}</p>
+                    </div>
+                  </div>
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg z-10" />
+                  <div className="w-1/2" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Global Presence CTA */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <img 

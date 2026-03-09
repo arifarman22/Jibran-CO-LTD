@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SplashScreen from "@/components/SplashScreen";
+import LoadingProvider from "@/components/LoadingProvider";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -23,11 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${nunitoSans.variable} antialiased font-sans min-h-screen flex flex-col bg-white text-slate-900`}>
-        <Navbar />
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
-        <Footer />
+        <SplashScreen />
+        <LoadingProvider>
+          <Navbar />
+          <main className="flex-grow pt-20">
+            {children}
+          </main>
+          <Footer />
+        </LoadingProvider>
       </body>
     </html>
   );
