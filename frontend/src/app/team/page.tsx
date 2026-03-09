@@ -17,7 +17,7 @@ export default function TeamPage() {
     {
       id: "1",
       name: "Md Nur Mohammad Shomrat",
-      role: "Chairman and Managing Director",
+      role: "Founder & Managing Director",
       bio: "Visionary leader driving the company's strategic direction and global expansion.",
       imageUrl: "/assets/shomrat.jpg"
     },
