@@ -16,59 +16,24 @@ export default function TeamPage() {
   const [members, setMembers] = useState<TeamMember[]>([
     {
       id: "1",
-      name: "Jibran Ahmed",
-      role: "Chief Executive Officer",
-      bio: "Visionary leader with 15+ years of experience in international business and strategic growth.",
-      imageUrl: "https://i.pravatar.cc/400?img=12"
+      name: "Shomrat",
+      role: "Chairman and Managing Director",
+      bio: "Visionary leader driving the company's strategic direction and global expansion.",
+      imageUrl: "/assets/shomrat.jpg"
     },
     {
       id: "2",
-      name: "Sarah Williams",
-      role: "Chief Operating Officer",
-      bio: "Operations expert specializing in supply chain optimization and business process management.",
-      imageUrl: "https://i.pravatar.cc/400?img=47"
+      name: "Shishu",
+      role: "Managing Director",
+      bio: "Expert in operations management and business development across international markets.",
+      imageUrl: "/assets/shishu.jpg"
     },
     {
       id: "3",
-      name: "Michael Chen",
-      role: "Chief Financial Officer",
-      bio: "Financial strategist with expertise in international trade finance and risk management.",
-      imageUrl: "https://i.pravatar.cc/400?img=33"
-    },
-    {
-      id: "4",
-      name: "Emily Rodriguez",
-      role: "Director of Business Development",
-      bio: "Dynamic leader focused on expanding market presence and building strategic partnerships.",
-      imageUrl: "https://i.pravatar.cc/400?img=45"
-    },
-    {
-      id: "5",
-      name: "David Thompson",
-      role: "Head of Digital Services",
-      bio: "Technology innovator driving digital transformation across all business verticals.",
-      imageUrl: "https://i.pravatar.cc/400?img=15"
-    },
-    {
-      id: "6",
-      name: "Aisha Patel",
-      role: "Head of Hospitality Division",
-      bio: "Hospitality veteran with a passion for creating exceptional guest experiences.",
-      imageUrl: "https://i.pravatar.cc/400?img=38"
-    },
-    {
-      id: "7",
-      name: "James Wilson",
-      role: "Director of International Trade",
-      bio: "Expert in global logistics and customs compliance with 20+ years experience.",
-      imageUrl: "https://i.pravatar.cc/400?img=13"
-    },
-    {
-      id: "8",
-      name: "Maria Garcia",
-      role: "Head of Quality Assurance",
-      bio: "Dedicated to maintaining the highest standards in product quality and safety.",
-      imageUrl: "https://i.pravatar.cc/400?img=44"
+      name: "Fatema",
+      role: "Managing Director",
+      bio: "Specialist in strategic planning and corporate governance with extensive industry experience.",
+      imageUrl: "/assets/fatema.jpg"
     }
   ]);
   const [loading, setLoading] = useState(false);
