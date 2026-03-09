@@ -10,6 +10,13 @@ import {
 export default function ServicesPage() {
   const services = [
     { 
+      title: "Import, Export & Trading", 
+      description: "Global import-export and international trading services with comprehensive logistics coordination across 60+ countries.", 
+      icon: <Ship className="w-8 h-8" />,
+      color: "from-teal-500 to-cyan-500",
+      slug: "international-trading"
+    },
+    { 
       title: "Travel & Tourism", 
       description: "Comprehensive travel solutions including tour operations, airline ticketing, hotel reservations, and visa assistance.", 
       icon: <Plane className="w-8 h-8" />,
@@ -57,13 +64,6 @@ export default function ServicesPage() {
       icon: <Shirt className="w-8 h-8" />,
       color: "from-pink-500 to-rose-500",
       slug: "garments-textile"
-    },
-    { 
-      title: "Import, Export & Trading", 
-      description: "Global import-export and international trading services with comprehensive logistics coordination.", 
-      icon: <Ship className="w-8 h-8" />,
-      color: "from-teal-500 to-cyan-500",
-      slug: "international-trading"
     },
     { 
       title: "Digital & IT Services", 
@@ -124,7 +124,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-6xl md:text-7xl font-light text-white mb-8 leading-tight"
+            className="text-6xl md:text-7xl font-outfit font-black text-white mb-8 leading-tight"
           >
             Our Services
           </motion.h1>
@@ -132,7 +132,7 @@ export default function ServicesPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-2xl text-white/90 font-light max-w-3xl mx-auto leading-relaxed"
+            className="text-2xl text-white/90 font-inter font-light max-w-3xl mx-auto leading-relaxed"
           >
             Diversified business portfolio spanning multiple industries with excellence and innovation at every touchpoint.
           </motion.p>
@@ -178,6 +178,41 @@ export default function ServicesPage() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Why Choose Our Services */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">Why Choose Us</h2>
+            <p className="text-xl text-muted-foreground font-inter max-w-3xl mx-auto">We deliver exceptional value through our commitment to quality, innovation, and customer satisfaction.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Global Reach", desc: "Operating in 60+ countries with 200+ trusted partners worldwide", stat: "60+" },
+              { title: "Experience", desc: "Over 5 years of proven excellence across diverse industries", stat: "5+" },
+              { title: "Expertise", desc: "Specialized teams delivering world-class solutions in every sector", stat: "13+" }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white dark:bg-card p-8 rounded-2xl shadow-lg border border-border text-center"
+              >
+                <div className="text-6xl font-outfit font-black text-primary mb-4">{item.stat}</div>
+                <h3 className="text-2xl font-outfit font-black text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground font-inter">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
