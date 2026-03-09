@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
   Plane, Hotel, UtensilsCrossed, Sprout, Building2, HardHat, 
-  Shirt, Ship, Laptop, Briefcase, GraduationCap, Tv, Heart, ArrowRight 
+  Shirt, Ship, Laptop, Briefcase, GraduationCap, Tv, Heart, ArrowRight,
+  CheckCircle, Globe, Shield, Users, TrendingUp, Award
 } from "lucide-react";
 
 export default function ServicesPage() {
@@ -178,6 +179,134 @@ export default function ServicesPage() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Our Approach */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">Our Approach</h2>
+          <p className="text-xl text-muted-foreground font-inter max-w-3xl mx-auto">A proven methodology that ensures success at every stage of your project.</p>
+        </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { step: "01", title: "Discovery", desc: "Understanding your business needs and objectives", icon: <Users className="w-6 h-6" /> },
+            { step: "02", title: "Strategy", desc: "Developing customized solutions and action plans", icon: <TrendingUp className="w-6 h-6" /> },
+            { step: "03", title: "Execution", desc: "Implementing solutions with precision and expertise", icon: <CheckCircle className="w-6 h-6" /> },
+            { step: "04", title: "Support", desc: "Ongoing assistance and continuous improvement", icon: <Shield className="w-6 h-6" /> }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative bg-white dark:bg-card p-8 rounded-2xl shadow-lg border border-border"
+            >
+              <div className="text-6xl font-outfit font-black text-primary/20 mb-4">{item.step}</div>
+              <div className="bg-gradient-to-br from-primary to-secondary text-white p-3 rounded-xl inline-flex mb-4">{item.icon}</div>
+              <h3 className="text-2xl font-outfit font-black text-foreground mb-3">{item.title}</h3>
+              <p className="text-muted-foreground font-inter">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Industry Standards */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">Industry Standards</h2>
+            <p className="text-xl text-muted-foreground font-inter max-w-3xl mx-auto">Committed to excellence through international certifications and quality standards.</p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { title: "ISO Certified", desc: "Quality Management" },
+              { title: "Global Trade", desc: "Compliance Standards" },
+              { title: "Industry Leader", desc: "Best Practices" },
+              { title: "Trusted Partner", desc: "200+ Clients" }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="bg-white dark:bg-card p-6 rounded-2xl shadow-lg border border-border mb-4 inline-flex">
+                  <Award className="w-12 h-12 text-primary" />
+                </div>
+                <h3 className="text-xl font-outfit font-black text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground font-inter">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service Benefits */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">What Sets Us Apart</h2>
+            <p className="text-xl text-muted-foreground font-inter mb-8">We combine global expertise with local knowledge to deliver unmatched value to our clients.</p>
+            <div className="space-y-4">
+              {[
+                "End-to-end solutions across multiple industries",
+                "Dedicated account management and support",
+                "Proven track record of successful projects",
+                "Competitive pricing with transparent billing",
+                "24/7 customer support and assistance",
+                "Cutting-edge technology and innovation"
+              ].map((benefit, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-3"
+                >
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-lg font-inter text-foreground">{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" 
+                alt="Team collaboration" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <h3 className="text-3xl font-outfit font-black text-white mb-2">Global Excellence</h3>
+                <p className="text-white/90 font-inter">Delivering world-class solutions across continents</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
