@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <HeroSection />
       <TradingFeaturesSection />
-      <ProductsShowcaseSection />
-      <StatsSection />
       <ServicesSection />
+      <ProductsShowcaseSection />
       <ProjectsSection />
+      <StatsSection />
       <CtaSection />
     </>
   );
