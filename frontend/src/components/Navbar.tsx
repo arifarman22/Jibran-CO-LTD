@@ -145,9 +145,11 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
             ))}
-            <Button className="bg-amber-500 hover:bg-amber-600 text-white font-normal shadow-lg transition-all rounded-xl px-6">
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button className="bg-amber-500 hover:bg-amber-600 text-white font-normal shadow-lg transition-all rounded-xl px-6">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           <div className="flex items-center md:hidden">
@@ -205,9 +207,11 @@ export default function Navbar() {
               </div>
             ))}
             <div className="px-3 pt-4">
-              <Button className="w-full bg-amber-500 text-white hover:bg-amber-600 font-normal">
-                Get Started
-              </Button>
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Button className="w-full bg-amber-500 text-white hover:bg-amber-600 font-normal">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
