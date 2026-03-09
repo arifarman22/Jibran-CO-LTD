@@ -2,7 +2,6 @@ import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { errorHandler } from './middlewares/errorHandler';
-import { generalLimiter } from './middlewares/rateLimiter';
 import authRoutes from './routes/authRoutes';
 import servicesRoutes from './routes/servicesRoutes';
 import projectsRoutes from './routes/projectsRoutes';
@@ -20,7 +19,6 @@ const app: Express = express();
 // Security Middlewares
 app.use(helmet());
 app.use(cors({ origin: process.env.FRONTEND_URL || '*' }));
-app.use(generalLimiter);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
