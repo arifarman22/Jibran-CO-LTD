@@ -246,8 +246,10 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">Address</h4>
                     <p className="text-slate-600">
-                      Phnom Penh<br />
-                      Cambodia
+                      Ground floor (E0), House 12C<br />
+                      Concrete Road, Toul Thanan Village<br />
+                      Toul Sangkae, Russey Keo District<br />
+                      Phnom Penh, Cambodia
                     </p>
                   </div>
                 </div>
