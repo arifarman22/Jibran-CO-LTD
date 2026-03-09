@@ -1,4 +1,5 @@
-import express, { Express, Request, Response } from 'express';
+import 'dotenv/config';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { errorHandler } from './middlewares/errorHandler';
@@ -27,7 +28,7 @@ app.get('/api/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'ok', message: 'API is running' });
 });
 
-// Routes
+// Routes with error wrapping
 app.use('/api/auth', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/services', servicesRoutes);
@@ -39,6 +40,11 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/team', teamRoutes);
 app.use('/api/contact', contactRoutes);
+
+// 404 Handler
+app.use((req: Request, res: Response) => {
+  res.status(404).json({ status: 'error', message: 'Route not found' });
+});
 
 // Global Error Handler
 app.use(errorHandler);
