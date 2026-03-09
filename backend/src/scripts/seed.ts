@@ -143,6 +143,51 @@ async function main() {
     await prisma.exportMarket.create({ data: market });
   }
   console.log('✅ Export markets seeded.');
+
+  // Seed Team Members
+  const teamMembers = [
+    {
+      name: 'Jibran Ahmed',
+      role: 'Chief Executive Officer',
+      bio: 'Visionary leader with 15+ years of experience in international business and strategic growth.',
+      imageUrl: 'https://i.pravatar.cc/400?img=12',
+    },
+    {
+      name: 'Sarah Williams',
+      role: 'Chief Operating Officer',
+      bio: 'Operations expert specializing in supply chain optimization and business process management.',
+      imageUrl: 'https://i.pravatar.cc/400?img=47',
+    },
+    {
+      name: 'Michael Chen',
+      role: 'Chief Financial Officer',
+      bio: 'Financial strategist with expertise in international trade finance and risk management.',
+      imageUrl: 'https://i.pravatar.cc/400?img=33',
+    },
+    {
+      name: 'Emily Rodriguez',
+      role: 'Director of Business Development',
+      bio: 'Dynamic leader focused on expanding market presence and building strategic partnerships.',
+      imageUrl: 'https://i.pravatar.cc/400?img=45',
+    },
+    {
+      name: 'David Thompson',
+      role: 'Head of Digital Services',
+      bio: 'Technology innovator driving digital transformation across all business verticals.',
+      imageUrl: 'https://i.pravatar.cc/400?img=15',
+    },
+    {
+      name: 'Aisha Patel',
+      role: 'Head of Hospitality Division',
+      bio: 'Hospitality veteran with a passion for creating exceptional guest experiences.',
+      imageUrl: 'https://i.pravatar.cc/400?img=38',
+    },
+  ];
+
+  for (const member of teamMembers) {
+    await prisma.teamMember.create({ data: member });
+  }
+  console.log('✅ Team members seeded.');
 }
 
 main()
