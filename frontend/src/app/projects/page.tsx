@@ -202,7 +202,7 @@ export default function ProjectsPage() {
 
                 {/* Project Info */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-outfit font-black text-foreground mb-3 group-hover:text-secondary transition-colors">
+                  <h3 className="text-2xl font-outfit font-black text-foreground mb-3">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground font-inter leading-relaxed mb-4 line-clamp-3">
