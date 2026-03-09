@@ -16,21 +16,21 @@ export default function TeamPage() {
   const [members, setMembers] = useState<TeamMember[]>([
     {
       id: "1",
-      name: "Shomrat",
+      name: "Md Nur Mohammad Shomrat",
       role: "Chairman and Managing Director",
       bio: "Visionary leader driving the company's strategic direction and global expansion.",
       imageUrl: "/assets/shomrat.jpg"
     },
     {
       id: "2",
-      name: "Shishu",
+      name: "Md Moniruzzaman Sabbir",
       role: "Managing Director",
       bio: "Expert in operations management and business development across international markets.",
       imageUrl: "/assets/shishu.jpg"
     },
     {
       id: "3",
-      name: "Fatema",
+      name: "Fatema Akter Mishuk",
       role: "Managing Director",
       bio: "Specialist in strategic planning and corporate governance with extensive industry experience.",
       imageUrl: "/assets/fatema.jpg"
@@ -123,7 +123,7 @@ export default function TeamPage() {
                   </div>
                 </div>
                 <h3 className="text-2xl font-outfit font-black text-foreground mb-2">{member.name}</h3>
-                <p className="text-secondary font-inter font-bold text-sm mb-3">{member.role}</p>
+                <p className="text-black font-inter font-bold text-sm mb-3">{member.role}</p>
                 {member.bio && (
                   <p className="text-muted-foreground font-inter text-sm leading-relaxed line-clamp-3">
                     {member.bio}
