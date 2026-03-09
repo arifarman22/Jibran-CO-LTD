@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, MapPin, User, Filter, X } from "lucide-react";
-import axios from "axios";
 import { Button } from "@/components/ui/button";
 
 interface Project {
@@ -18,28 +17,72 @@ interface Project {
 }
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [projects, setProjects] = useState<Project[]>([
+    {
+      id: "1",
+      title: "Global Electronics Export",
+      description: "Successfully exported 50,000+ units of consumer electronics to European markets with full compliance and quality assurance.",
+      productCategory: "Trading",
+      client: "TechGlobal Inc.",
+      tradeRegion: "Europe",
+      completionDate: "2024-01-15",
+      images: ["https://images.unsplash.com/photo-1550009158-9ebf69173e03?q=80&w=1500&auto=format&fit=crop"]
+    },
+    {
+      id: "2",
+      title: "Textile Manufacturing Partnership",
+      description: "Established long-term partnership for premium textile export to North American fashion brands.",
+      productCategory: "Garments & Textile",
+      client: "Fashion Forward Ltd.",
+      tradeRegion: "North America",
+      completionDate: "2023-11-20",
+      images: ["https://images.unsplash.com/photo-1558769132-cb1aea1f1d58?q=80&w=1500&auto=format&fit=crop"]
+    },
+    {
+      id: "3",
+      title: "Agricultural Products Distribution",
+      description: "Managed end-to-end logistics for organic agricultural products from Asia to Middle East markets.",
+      productCategory: "Agriculture",
+      client: "Green Harvest Co.",
+      tradeRegion: "Middle East",
+      completionDate: "2023-12-10",
+      images: ["https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1500&auto=format&fit=crop"]
+    },
+    {
+      id: "4",
+      title: "Industrial Machinery Import",
+      description: "Facilitated import of heavy industrial machinery for manufacturing sector with customs clearance.",
+      productCategory: "Trading",
+      client: "Industrial Solutions",
+      tradeRegion: "Asia Pacific",
+      completionDate: "2024-02-05",
+      images: ["https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1500&auto=format&fit=crop"]
+    },
+    {
+      id: "5",
+      title: "Construction Materials Supply",
+      description: "Supplied premium construction materials for major infrastructure projects across Southeast Asia.",
+      productCategory: "Construction",
+      client: "BuildTech Corp.",
+      tradeRegion: "Southeast Asia",
+      completionDate: "2023-10-30",
+      images: ["https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1500&auto=format&fit=crop"]
+    },
+    {
+      id: "6",
+      title: "Automotive Parts Trading",
+      description: "Established supply chain for automotive components with major manufacturers in Europe and Asia.",
+      productCategory: "Trading",
+      client: "AutoParts Global",
+      tradeRegion: "Europe & Asia",
+      completionDate: "2024-01-25",
+      images: ["https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1500&auto=format&fit=crop"]
+    }
+  ]);
+  const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const categories = ["All", "Hospitality", "Travel & Tourism", "Food & Beverage", "Agriculture", "Real Estate", "Construction", "Garments & Textile", "Trading", "Digital & IT", "Business Consulting", "Education & Training", "Media & Broadcasting", "CSR & Community"];
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/projects`
-        );
-        setProjects(response.data);
-      } catch (error) {
-        console.error("Failed to fetch projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProjects();
-  }, []);
 
   const filteredProjects = selectedCategory === "All" 
     ? projects 

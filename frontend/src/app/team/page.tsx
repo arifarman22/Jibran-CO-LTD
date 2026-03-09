@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Mail, User } from "lucide-react";
-import axios from "axios";
 
 interface TeamMember {
   id: string;
@@ -14,25 +13,65 @@ interface TeamMember {
 }
 
 export default function TeamPage() {
-  const [members, setMembers] = useState<TeamMember[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchTeam = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api"}/team`
-        );
-        setMembers(response.data);
-      } catch (error) {
-        console.error("Failed to fetch team members:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTeam();
-  }, []);
+  const [members, setMembers] = useState<TeamMember[]>([
+    {
+      id: "1",
+      name: "Jibran Ahmed",
+      role: "Chief Executive Officer",
+      bio: "Visionary leader with 15+ years of experience in international business and strategic growth.",
+      imageUrl: "https://i.pravatar.cc/400?img=12"
+    },
+    {
+      id: "2",
+      name: "Sarah Williams",
+      role: "Chief Operating Officer",
+      bio: "Operations expert specializing in supply chain optimization and business process management.",
+      imageUrl: "https://i.pravatar.cc/400?img=47"
+    },
+    {
+      id: "3",
+      name: "Michael Chen",
+      role: "Chief Financial Officer",
+      bio: "Financial strategist with expertise in international trade finance and risk management.",
+      imageUrl: "https://i.pravatar.cc/400?img=33"
+    },
+    {
+      id: "4",
+      name: "Emily Rodriguez",
+      role: "Director of Business Development",
+      bio: "Dynamic leader focused on expanding market presence and building strategic partnerships.",
+      imageUrl: "https://i.pravatar.cc/400?img=45"
+    },
+    {
+      id: "5",
+      name: "David Thompson",
+      role: "Head of Digital Services",
+      bio: "Technology innovator driving digital transformation across all business verticals.",
+      imageUrl: "https://i.pravatar.cc/400?img=15"
+    },
+    {
+      id: "6",
+      name: "Aisha Patel",
+      role: "Head of Hospitality Division",
+      bio: "Hospitality veteran with a passion for creating exceptional guest experiences.",
+      imageUrl: "https://i.pravatar.cc/400?img=38"
+    },
+    {
+      id: "7",
+      name: "James Wilson",
+      role: "Director of International Trade",
+      bio: "Expert in global logistics and customs compliance with 20+ years experience.",
+      imageUrl: "https://i.pravatar.cc/400?img=13"
+    },
+    {
+      id: "8",
+      name: "Maria Garcia",
+      role: "Head of Quality Assurance",
+      bio: "Dedicated to maintaining the highest standards in product quality and safety.",
+      imageUrl: "https://i.pravatar.cc/400?img=44"
+    }
+  ]);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="bg-background min-h-screen">

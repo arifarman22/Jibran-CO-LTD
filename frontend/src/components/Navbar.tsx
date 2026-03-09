@@ -68,10 +68,10 @@ export default function Navbar() {
               </div>
               <div>
                 <span className="font-normal text-xl tracking-tight text-slate-900 block leading-none">
-                  Jibran C. Ltd
+                  Jibran Co. Ltd
                 </span>
                 <span className="text-[10px] text-slate-500 font-light tracking-wider">
-                  Business Portfolio
+                  Global Trading
                 </span>
               </div>
             </Link>

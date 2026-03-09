@@ -44,7 +44,7 @@ export default function AboutPage() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-6xl md:text-7xl font-light text-white mb-8 leading-tight"
           >
-            About Jibran C. Ltd
+            About Jibran Co. Ltd
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -91,7 +91,7 @@ export default function AboutPage() {
             <h3 className="text-5xl font-black text-slate-900 mb-8 leading-tight">Building Tomorrow's Business Landscape</h3>
             <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
               <p className="text-xl">
-                Jibran C. Ltd was founded with a vision to create a diversified business empire that touches every aspect of modern life—from the places we stay to the food we eat, the homes we build, and the services we rely on.
+                Jibran Co. Ltd was founded with a vision to create a diversified business empire that touches every aspect of modern life—from the places we stay to the food we eat, the homes we build, and the services we rely on.
               </p>
               <p>
                 What started as a focused enterprise has evolved into a multi-sector conglomerate spanning 13 distinct business categories. We operate across Travel & Tourism, Hospitality, Food & Beverage, Agriculture, Real Estate, Construction, Garments, Trading, Digital Services, Consulting, Education, Media, and Corporate Social Responsibility.

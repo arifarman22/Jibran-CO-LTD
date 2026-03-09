@@ -13,7 +13,7 @@ export default function Footer() {
                 <Ship className="h-6 w-6 text-secondary group-hover:text-primary" />
               </div>
               <span className="font-sans font-extrabold text-xl tracking-tight text-white">
-                JIBRAN CO LTD
+                Jibran Co. Ltd
               </span>
             </Link>
             <p className="text-primary-foreground/70 font-sans text-sm mb-6 leading-relaxed">
@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-foreground/40 font-sans text-xs">
-            &copy; {new Date().getFullYear()} Jibran CO LTD. Registered Global Trade Entity.
+            &copy; {new Date().getFullYear()} Jibran Co. Ltd. All Rights Reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             {/* Social Icons Placeholder */}

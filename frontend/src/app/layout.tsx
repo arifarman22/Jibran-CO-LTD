@@ -11,8 +11,8 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jibran C. Ltd | Diversified Business Portfolio",
-  description: "Diversified business conglomerate operating across Travel, Hospitality, Real Estate, Construction, Digital Services, and International Trade.",
+  title: "Jibran Co. Ltd | Global Import Export Trading",
+  description: "Leading international trading company specializing in import-export operations, supply chain management, and global trade solutions across multiple industries.",
 };
 
 export default function RootLayout({
