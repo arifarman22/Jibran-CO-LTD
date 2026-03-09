@@ -27,6 +27,7 @@ async function main() {
     {
       title: 'Global Trade Management',
       slug: 'global-trade-management',
+      category: 'TRADING',
       description: 'End-to-end management of complex international trade operations, ensuring regulatory compliance and logistical efficiency.',
       imageUrl: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1500&auto=format&fit=crop',
       iconUrl: 'Box',
@@ -34,6 +35,7 @@ async function main() {
     {
       title: 'Supply Chain Optimization',
       slug: 'supply-chain-optimization',
+      category: 'CONSULTING',
       description: 'Leveraging data-driven insights to streamline your supply chain, reduce costs, and improve delivery speeds across borders.',
       imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?q=80&w=1500&auto=format&fit=crop',
       iconUrl: 'TrendingUp',
@@ -41,6 +43,7 @@ async function main() {
     {
       title: 'Risk Mitigation & Compliance',
       slug: 'risk-mitigation-compliance',
+      category: 'CONSULTING',
       description: 'Expert navigation of international trade laws, customs regulations, and geopolitical risks to protect your business interests.',
       imageUrl: 'https://images.unsplash.com/photo-1454165833767-027ffea10c3b?q=80&w=1500&auto=format&fit=crop',
       iconUrl: 'ShieldCheck',
