@@ -7,20 +7,16 @@ import PageLoader from "./PageLoader";
 export default function LoadingProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
-  const [prevPathname, setPrevPathname] = useState(pathname);
 
   useEffect(() => {
-    if (pathname !== prevPathname) {
-      setLoading(true);
-      setPrevPathname(pathname);
+    setLoading(true);
+    
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
 
-      const timer = setTimeout(() => {
-        setLoading(false);
-      }, 800);
-
-      return () => clearTimeout(timer);
-    }
-  }, [pathname, prevPathname]);
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   return (
     <>
