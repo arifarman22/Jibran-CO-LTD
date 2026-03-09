@@ -1,0 +1,1 @@
+import app from './app';\n\nexport default app;
