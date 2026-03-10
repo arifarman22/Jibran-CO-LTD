@@ -10,32 +10,104 @@ interface TeamMember {
   role: string;
   bio?: string;
   imageUrl?: string;
+  category: string;
+}
+
+interface TeamCategory {
+  title: string;
+  members: TeamMember[];
 }
 
 export default function TeamPage() {
-  const [members, setMembers] = useState<TeamMember[]>([
+  const teamCategories: TeamCategory[] = [
     {
-      id: "1",
-      name: "Md Nur Mohammad Shomrat",
-      role: "Founder & Managing Director",
-      bio: "Visionary leader driving the company's strategic direction and global expansion.",
-      imageUrl: "/assets/shomrat.jpg"
+      title: "Leadership",
+      members: [
+        {
+          id: "1",
+          name: "Md Nur Mohammad Shomrat",
+          role: "Founder, Chairman & Managing Director",
+          bio: "Visionary leader driving the company's strategic direction and global expansion.",
+          imageUrl: "/assets/shomrat.jpg",
+          category: "Leadership"
+        },
+        {
+          id: "2",
+          name: "Md Moniruzzaman Sabbir",
+          role: "Founder & CEO",
+          bio: "Expert in operations management and business development across international markets.",
+          imageUrl: "/assets/shishu.jpg",
+          category: "Leadership"
+        },
+        {
+          id: "3",
+          name: "MD. Abdullah Al Jarif",
+          role: "Director",
+          bio: "Strategic leader with expertise in corporate development and business operations.",
+          imageUrl: "/assets/jarif.jpg",
+          category: "Leadership"
+        }
+      ]
     },
     {
-      id: "2",
-      name: "Md Moniruzzaman Sabbir",
-      role: "Managing Director",
-      bio: "Expert in operations management and business development across international markets.",
-      imageUrl: "/assets/shishu.jpg"
+      title: "Management",
+      members: [
+        {
+          id: "4",
+          name: "Md. Toukir Ahmed",
+          role: "General Manager",
+          bio: "Experienced manager overseeing daily operations and team coordination.",
+          imageUrl: "/assets/Taukir.jpg",
+          category: "Management"
+        },
+        {
+          id: "5",
+          name: "Munna Badruzzaman",
+          role: "Manager",
+          bio: "Dedicated professional managing key business operations and client relations.",
+          imageUrl: "/assets/munna.jpg",
+          category: "Management"
+        },
+        {
+          id: "6",
+          name: "Md. Ruhul Amin",
+          role: "Supervisor",
+          bio: "Skilled supervisor ensuring quality standards and operational excellence.",
+          imageUrl: "/assets/ruhul.jpg",
+          category: "Management"
+        }
+      ]
     },
     {
-      id: "3",
-      name: "Fatema Akter Mishuk",
-      role: "Managing Director",
-      bio: "Specialist in strategic planning and corporate governance with extensive industry experience.",
-      imageUrl: "/assets/fatema.jpg"
+      title: "Executive Officers",
+      members: [
+        {
+          id: "7",
+          name: "Md. Yusuf Hossain",
+          role: "Executive Officer",
+          bio: "Dynamic executive handling critical business functions and client services.",
+          imageUrl: "/assets/Yousuf.jpg",
+          category: "Executive"
+        },
+        {
+          id: "8",
+          name: "Md. Inzaman Badhon",
+          role: "Executive Officer",
+          bio: "Committed professional driving operational efficiency and excellence.",
+          imageUrl: "/assets/badhon.jpg",
+          category: "Executive"
+        },
+        {
+          id: "9",
+          name: "Md. Mafuzur Rahman",
+          role: "Executive Officer",
+          bio: "Results-oriented executive focused on delivering exceptional outcomes.",
+          imageUrl: "/assets/mafuz.jpg",
+          category: "Executive"
+        }
+      ]
     }
-  ]);
+  ];
   const [loading, setLoading] = useState(false);
 
   return (
@@ -75,61 +147,70 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Team Grid */}
+      {/* Team Grid by Category */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {loading ? (
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-secondary"></div>
             <p className="mt-4 text-muted-foreground">Loading team members...</p>
           </div>
-        ) : members.length === 0 ? (
-          <div className="text-center py-12">
-            <User className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-            <p className="text-muted-foreground">No team members found.</p>
-          </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {members.map((member, index) => (
-              <motion.div
-                key={member.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="relative h-[400px] w-full rounded-2xl overflow-hidden mb-6 shadow-xl">
-                  {member.imageUrl ? (
-                    <img 
-                      src={member.imageUrl} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                      <User className="w-24 h-24 text-white/50" />
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="flex space-x-3 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                      <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl hover:bg-secondary hover:scale-110 transition-all cursor-pointer">
-                        <Linkedin className="w-4 h-4 text-primary" />
+          <div className="space-y-20">
+            {teamCategories.map((category, catIndex) => (
+              <div key={category.title}>
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-4xl md:text-5xl font-outfit font-black text-foreground mb-12 text-center"
+                >
+                  {category.title}
+                </motion.h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {category.members.map((member, index) => (
+                    <motion.div
+                      key={member.id}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="group"
+                    >
+                      <div className="relative h-[400px] w-full rounded-2xl overflow-hidden mb-6 shadow-xl">
+                        {member.imageUrl ? (
+                          <img 
+                            src={member.imageUrl} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                            <User className="w-24 h-24 text-white/50" />
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <div className="flex space-x-3 mb-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl hover:bg-secondary hover:scale-110 transition-all cursor-pointer">
+                              <Linkedin className="w-4 h-4 text-primary" />
+                            </div>
+                            <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl hover:bg-secondary hover:scale-110 transition-all cursor-pointer">
+                              <Mail className="w-4 h-4 text-primary" />
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="bg-white/90 backdrop-blur-sm p-3 rounded-xl hover:bg-secondary hover:scale-110 transition-all cursor-pointer">
-                        <Mail className="w-4 h-4 text-primary" />
-                      </div>
-                    </div>
-                  </div>
+                      <h3 className="text-2xl font-outfit font-black text-foreground mb-2">{member.name}</h3>
+                      <p className="text-black font-inter font-bold text-sm mb-3">{member.role}</p>
+                      {member.bio && (
+                        <p className="text-muted-foreground font-inter text-sm leading-relaxed line-clamp-3">
+                          {member.bio}
+                        </p>
+                      )}
+                    </motion.div>
+                  ))}
                 </div>
-                <h3 className="text-2xl font-outfit font-black text-foreground mb-2">{member.name}</h3>
-                <p className="text-black font-inter font-bold text-sm mb-3">{member.role}</p>
-                {member.bio && (
-                  <p className="text-muted-foreground font-inter text-sm leading-relaxed line-clamp-3">
-                    {member.bio}
-                  </p>
-                )}
-              </motion.div>
+              </div>
             ))}
           </div>
         )}
