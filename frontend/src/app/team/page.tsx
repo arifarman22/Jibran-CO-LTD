@@ -41,6 +41,14 @@ export default function TeamPage() {
         },
         {
           id: "3",
+          name: "Fatema Akter Mishuk",
+          role: "Managing Director",
+          bio: "Specialist in strategic planning and corporate governance with extensive industry experience.",
+          imageUrl: "/assets/fatema.jpg",
+          category: "Leadership"
+        },
+        {
+          id: "4",
           name: "MD. Abdullah Al Jarif",
           role: "Director",
           bio: "Strategic leader with expertise in corporate development and business operations.",
@@ -53,7 +61,7 @@ export default function TeamPage() {
       title: "Management",
       members: [
         {
-          id: "4",
+          id: "5",
           name: "Md. Toukir Ahmed",
           role: "General Manager",
           bio: "Experienced manager overseeing daily operations and team coordination.",
@@ -61,7 +69,7 @@ export default function TeamPage() {
           category: "Management"
         },
         {
-          id: "5",
+          id: "6",
           name: "Munna Badruzzaman",
           role: "Manager",
           bio: "Dedicated professional managing key business operations and client relations.",
@@ -69,7 +77,7 @@ export default function TeamPage() {
           category: "Management"
         },
         {
-          id: "6",
+          id: "7",
           name: "Md. Ruhul Amin",
           role: "Supervisor",
           bio: "Skilled supervisor ensuring quality standards and operational excellence.",
@@ -82,7 +90,7 @@ export default function TeamPage() {
       title: "Executive Officers",
       members: [
         {
-          id: "7",
+          id: "8",
           name: "Md. Yusuf Hossain",
           role: "Executive Officer",
           bio: "Dynamic executive handling critical business functions and client services.",
@@ -90,7 +98,7 @@ export default function TeamPage() {
           category: "Executive"
         },
         {
-          id: "8",
+          id: "9",
           name: "Md. Inzaman Badhon",
           role: "Executive Officer",
           bio: "Committed professional driving operational efficiency and excellence.",
@@ -98,7 +106,7 @@ export default function TeamPage() {
           category: "Executive"
         },
         {
-          id: "9",
+          id: "10",
           name: "Md. Mafuzur Rahman",
           role: "Executive Officer",
           bio: "Results-oriented executive focused on delivering exceptional outcomes.",
