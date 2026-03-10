@@ -86,7 +86,7 @@ export default function CtaSection() {
           {/* 3D Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             {[
-              { number: "30+", label: "Years Excellence" },
+              { number: "5+", label: "Years Excellence" },
               { number: "60+", label: "Global Markets" },
               { number: "500+", label: "Trusted Partners" }
             ].map((stat, index) => (

@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Ship, Globe, Users, DollarSign } from "lucide-react";
 
 export default function StatsSection() {
   const stats = [
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/2769/2769339.png",
+      icon: Ship,
       value: "50K+",
       label: "Annual Shipments",
       description: "Containers delivered worldwide",
@@ -14,7 +15,7 @@ export default function StatsSection() {
       gradient: "from-blue-600 to-cyan-600"
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      icon: Globe,
       value: "60+",
       label: "Countries Served",
       description: "Global market coverage",
@@ -22,7 +23,7 @@ export default function StatsSection() {
       gradient: "from-purple-600 to-pink-600"
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/681/681494.png",
+      icon: Users,
       value: "200+",
       label: "Global Partners",
       description: "Trusted business network",
@@ -30,7 +31,7 @@ export default function StatsSection() {
       gradient: "from-green-600 to-emerald-600"
     },
     {
-      icon: "https://cdn-icons-png.flaticon.com/512/3135/3135706.png",
+      icon: DollarSign,
       value: "$100M+",
       label: "Trade Volume",
       description: "Annual transaction value",
@@ -100,14 +101,8 @@ export default function StatsSection() {
                   
                   {/* Icon */}
                   <div className="absolute top-6 left-6">
-                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md p-3 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                      <Image
-                        src={stat.icon}
-                        alt={stat.label}
-                        width={64}
-                        height={64}
-                        className="w-full h-full object-contain filter brightness-0 invert"
-                      />
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                      <stat.icon className="w-8 h-8 text-white" />
                     </div>
                   </div>
                 </div>
