@@ -112,6 +112,14 @@ export default function TeamPage() {
           bio: "Results-oriented executive focused on delivering exceptional outcomes.",
           imageUrl: "/assets/mafuz.jpg",
           category: "Executive"
+        },
+        {
+          id: "11",
+          name: "Md. Abdur Rahman",
+          role: "Executive Officer",
+          bio: "Dedicated professional committed to operational excellence and client satisfaction.",
+          imageUrl: "/assets/rahman.jpg",
+          category: "Executive"
         }
       ]
     }
@@ -169,7 +177,7 @@ export default function TeamPage() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
-              { stat: "10+", label: "Team Members", icon: <Users className="w-8 h-8" /> },
+              { stat: "11+", label: "Team Members", icon: <Users className="w-8 h-8" /> },
               { stat: "5+", label: "Years Experience", icon: <Award className="w-8 h-8" /> },
               { stat: "200+", label: "Global Partners", icon: <TrendingUp className="w-8 h-8" /> },
               { stat: "60+", label: "Countries Served", icon: <Target className="w-8 h-8" /> }
