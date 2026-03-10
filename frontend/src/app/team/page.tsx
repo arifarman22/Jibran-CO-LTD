@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Mail, User } from "lucide-react";
+import { Linkedin, Mail, User, Target, Users, Award, TrendingUp } from "lucide-react";
 
 interface TeamMember {
   id: string;
@@ -155,6 +155,42 @@ export default function TeamPage() {
         </div>
       </section>
 
+      {/* Team Stats */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">Our Strength</h2>
+            <p className="text-xl text-muted-foreground font-inter max-w-3xl mx-auto">A diverse team of professionals committed to excellence and innovation.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { stat: "10+", label: "Team Members", icon: <Users className="w-8 h-8" /> },
+              { stat: "5+", label: "Years Experience", icon: <Award className="w-8 h-8" /> },
+              { stat: "200+", label: "Global Partners", icon: <TrendingUp className="w-8 h-8" /> },
+              { stat: "60+", label: "Countries Served", icon: <Target className="w-8 h-8" /> }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white dark:bg-card p-8 rounded-2xl shadow-lg border border-border text-center"
+              >
+                <div className="bg-gradient-to-br from-primary to-secondary text-white p-4 rounded-xl inline-flex mb-4">{item.icon}</div>
+                <div className="text-5xl font-outfit font-black text-primary mb-2">{item.stat}</div>
+                <p className="text-muted-foreground font-inter font-semibold">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Grid by Category */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {loading ? (
@@ -189,7 +225,7 @@ export default function TeamPage() {
                           <img 
                             src={member.imageUrl} 
                             alt={member.name} 
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" 
+                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
@@ -222,6 +258,98 @@ export default function TeamPage() {
             ))}
           </div>
         )}
+      </section>
+
+      {/* Our Culture */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">Our Culture</h2>
+            <p className="text-xl text-muted-foreground font-inter max-w-3xl mx-auto">We foster an environment of collaboration, innovation, and continuous growth.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Innovation First", desc: "Encouraging creative thinking and embracing new ideas to drive business forward." },
+              { title: "Team Collaboration", desc: "Working together across departments to achieve common goals and excellence." },
+              { title: "Continuous Learning", desc: "Investing in professional development and skill enhancement for all team members." },
+              { title: "Global Mindset", desc: "Operating with international perspective and cultural awareness in all markets." },
+              { title: "Integrity & Ethics", desc: "Maintaining highest standards of business ethics and transparent operations." },
+              { title: "Customer Focus", desc: "Putting client needs first and delivering exceptional value in every interaction." }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white dark:bg-card p-8 rounded-2xl shadow-lg border border-border"
+              >
+                <h3 className="text-2xl font-outfit font-black text-foreground mb-4">{item.title}</h3>
+                <p className="text-muted-foreground font-inter leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Career Opportunities */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-5xl md:text-6xl font-outfit font-black text-foreground mb-6">Join Our Journey</h2>
+            <p className="text-xl text-muted-foreground font-inter mb-8">Be part of a dynamic team that's shaping the future of global trade and business.</p>
+            <div className="space-y-4">
+              {[
+                "Competitive compensation and benefits",
+                "Professional development opportunities",
+                "International exposure and travel",
+                "Collaborative work environment",
+                "Work-life balance initiatives",
+                "Performance-based growth"
+              ].map((benefit, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3"
+                >
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span className="text-lg font-inter text-foreground">{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+                alt="Team collaboration" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8">
+                <h3 className="text-3xl font-outfit font-black text-white mb-2">Build Your Career</h3>
+                <p className="text-white/90 font-inter">Grow with a company that values your contribution</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* CTA Section */}
